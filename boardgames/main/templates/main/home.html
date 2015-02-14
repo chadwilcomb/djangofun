@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+      
+{% block content %}
+    <div class="jumbotron">
+		<p>Welcome to the Django Fundamentals course.
+		This site was made with <a href="http://www.djangoproject.com/">Django</a></p>
+		<p style="maring-top:1em;">
+			<a href="{% url 'boardgames_login' %}">Click here to login</a> or <a href="#">Sign Up!</a>
+		</p>
+    </div>
+{% endblock content %}
