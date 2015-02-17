@@ -38,7 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'main',
     'tictactoe',
-    'user'
+    'user',
+    'crispy_forms'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -90,3 +91,5 @@ TEMPLATE_DIRS = (os.path.join(BASE_DIR, "templates"),)
 LOGIN_URL = 'boardgames_login'
 LOGOUT_URL = 'boardgames_logout'
 LOGIN_REDIRECT_URL = 'user_home'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'

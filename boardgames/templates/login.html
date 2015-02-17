@@ -1,17 +1,21 @@
-<html>
-	<head>
-		<title>Please login</title>
-	</head>
-	<body>
-		{% if form.errors %}
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+Please login
+{% endblock title %}
+
+{% block content %}
+  <div class="col-sm-6">
+    {% if form.errors %}
 			<p class="text-warning">your username and password didn't match...</p>
 		{% endif %}
-
-		<form role="form" class="form-horizontal" method="post" action="{% url 'boardgames_login' %}">
+    <form role="form" class="form-horizontal" method="post" action="{% url 'boardgames_login' %}">
 			{% csrf_token %}
-			{{ form }}
+			{{ form|crispy }}
 			<input class="btn btn-primary" type="submit" value="Login" />
 			<input type="hidden" name="next" value="{{ next }}" /> 
  		</form>
- 	</body>
-</html>
+  </div>
+{% endblock content %}
